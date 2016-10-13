@@ -1,6 +1,7 @@
 package snrpost
 
 import (
+	"bytes"
 	"errors"
 	"reflect"
 	"strconv"
@@ -43,9 +44,14 @@ func unmarshal(data []byte, v interface{}) (int, error) {
 	return doUnmarshal(data, ref)
 }
 
-// UnmarshalPostID will unmarshal the first section of the snr row known as the PostID
-func UnmarshalPostID(data []byte, postID *PostID) (int, error) {
-	return unmarshal(data, postID)
+// UnmarshalFirPost will unmarshal the first section of the snr row known as the FirPost
+func UnmarshalFirPost(data []byte, post *FirPost) (int, error) {
+	return unmarshal(data, post)
+}
+
+// UnmarshalAviserPost will unmarshal the first section of the snr row known as the AviserPost
+func UnmarshalAviserPost(data []byte, post *AviserPost) (int, error) {
+	return unmarshal(data, post)
 }
 
 // UnmarshalData will unmarshal the second section of the snr row known as aviserdata
@@ -65,16 +71,13 @@ func doUnmarshal(data []byte, ref reflect.Value) (int, error) {
 		switch field.Type.Kind() {
 		case reflect.String:
 			d := data[readPos : readPos+length]
-			b, err := decoder.Bytes(d)
-			if err != nil {
-				return readPos, err
-			}
-			decoded, err := decoder.Bytes(b)
+
+			b, err := decoder.Bytes(bytes.Trim(d, "\x00"))
 			if err != nil {
 				return readPos, err
 			}
 			fn := ref.FieldByName(field.Name)
-			fn.SetString(strings.TrimSpace(string(decoded)))
+			fn.SetString(strings.TrimSpace(string(b)))
 			readPos += length
 		case reflect.Array:
 			fn := ref.FieldByName(field.Name)

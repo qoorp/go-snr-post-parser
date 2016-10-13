@@ -8,23 +8,26 @@ import (
 )
 
 func TestValidUnmarshal(t *testing.T) {
-	f, err := os.Open("/home/dlq/qoorp/baslyft-800,840/1line")
+	f, err := os.Open("/home/dlq/qoorp/baslyft-800,840/AV5081-U1-160825.txt")
 	defer f.Close()
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
 	rd := bufio.NewReader(f)
+	// Skip post 100
+	rd.ReadLine()
 	line, _, err := rd.ReadLine()
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-	var postID PostID
-	UnmarshalPostID(line, &postID)
+	var av AviserPost
+	UnmarshalAviserPost(line, &av)
+	fmt.Println(av)
 	var p800 Post800
 	UnmarshalData(line, &p800)
-	fmt.Println(p800)
+	fmt.Println(p800.Firma)
 }
 
 func TestNilUnmarshal(t *testing.T) {

@@ -1,29 +1,45 @@
 package snrpost
 
-// PostID ...
-type PostID struct {
-	PostBeteck  string      `snr:"6"`
-	UtskriftDat string      `snr:"8"`
-	RegDat      string      `snr:"8"`
-	IDNR        string      `snr:"17"`
-	DinrDag     string      `snr:"8"`
-	DinrDagMapp string      `snr:"4"`
-	Rattelse    string      `snr:"1"`
-	Status      string      `snr:"3"`
+// FirPost (7xx) ...
+type FirPost struct {
+	PostBeteck  string      `snr:"6" json:"post_beteck"`
+	UtskriftDat string      `snr:"8" json:"utskrift_dat"`
+	RegDat      string      `snr:"8" json:"reg_dat"`
+	IDNR        string      `snr:"17" json:"id_nr"`
+	DinrDag     string      `snr:"8" json:"dinr_dag"`
+	DinrDagMapp string      `snr:"4" json:"dinr_dag_mapp"`
+	Rattelse    string      `snr:"1" json:"rattelse"`
+	Status      string      `snr:"3" json:"status"`
 	_           interface{} `snr:"11"`
-	PostTyp     string      `snr:"3"`
+	PostTyp     string      `snr:"3" json:"post_typ"`
+}
+
+// AviserPost ...
+type AviserPost struct {
+	PostBeteck   string `snr:"6" json:"post_beteck"`
+	UtskriftDat  string `snr:"8" json:"utskrift_dat"`
+	ErendeRegDat string `snr:"16" json:"erende_reg_dat"`
+	ObjTyp       string `snr:"5" json:"obj_typ"`
+	Sekel        string `snr:"1" json:"sekel"`
+	OrgNR        string `snr:"10" json:"org_nr"`
+	LopNR        string `snr:"5" json:"lop_nr"`
+	Dinr         string `snr:"7" json:"dinr"`
+	DinrAr       string `snr:"4" json:"dinr_ar"`
+	ErendeTyp    string `snr:"3" json:"arende_typ"`
+	HistMark     string `snr:"1" json:"hist_mark"`
+	PostTyp      string `snr:"3" json:"post_typ"`
 }
 
 // Post800 ...
 type Post800 struct {
-	Firma        string `snr:"200"`
-	FirmaRegDat  string `snr:"8"`
-	LagerBolag   string `snr:"1"`
-	FirmaMark    string `snr:"1"`
-	KonvMark     string `snr:"5"`
-	RegLan       string `snr:"2"`
+	Firma        string `snr:"200" json:"firma"`
+	FirmaRegDat  string `snr:"8" json:"firma_reg_dat"`
+	Lagerbolag   string `snr:"1" json:"lagerbolag"`
+	FirmaMark    string `snr:"1" json:"firma_mark"`
+	KonvMark     string `snr:"5" json:"konv_mark"`
+	RegLan       string `snr:"2" json:"reg_lan"`
 	SkyddslanGRP [21]struct {
-		Skyddslan     string `snr:"2"`
-		SkyddslanMark string `snr:"1"`
+		Skyddslan     string `snr:"2" json:"skyddslan"`
+		SkyddslanMark string `snr:"1" json:"skyddslan_mark"`
 	}
 }
