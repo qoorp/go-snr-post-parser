@@ -59,7 +59,7 @@ func doUnmarshal(data []byte, ref reflect.Value) (int, error) {
 	for i := 0; i < refType.NumField(); i++ {
 		field := refType.Field(i)
 		length, err := getLen(field)
-		if err != nil {
+		if err != nil && field.Type.Kind() != reflect.Array {
 			return readPos, err
 		}
 		switch field.Type.Kind() {
