@@ -69,14 +69,11 @@ func doUnmarshal(data []byte, ref reflect.Value) (int, error) {
 			if err != nil {
 				return readPos, err
 			}
-			fn := ref.FieldByName(field.Name)
-			if err != nil {
-				return readPos, err
-			}
 			decoded, err := decoder.Bytes(b)
 			if err != nil {
 				return readPos, err
 			}
+			fn := ref.FieldByName(field.Name)
 			fn.SetString(strings.TrimSpace(string(decoded)))
 			readPos += length
 		case reflect.Array:
