@@ -16,7 +16,7 @@ type PostID struct {
 
 // Post800 ...
 type Post800 struct {
-	Firma        string `snr:"200" snrDecode:"true"`
+	Firma        string `snr:"200"`
 	FirmaRegDat  string `snr:"8"`
 	LagerBolag   string `snr:"1"`
 	FirmaMark    string `snr:"1"`
