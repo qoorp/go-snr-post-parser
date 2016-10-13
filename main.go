@@ -25,7 +25,6 @@ var (
 	// ErrTagUnsupportedType if the tag snr cannot be converted to int
 	ErrTagUnsupportedType = errors.New("snr tag can't be converted to int")
 	decoder               = charmap.ISO8859_15.NewDecoder()
-	sliceOfStructs        = reflect.TypeOf([]struct{}(nil))
 )
 
 // Unmarshal will unmarshal a snr row into the given struct
