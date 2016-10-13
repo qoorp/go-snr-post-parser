@@ -44,13 +44,13 @@ func unmarshal(data []byte, v interface{}) (int, error) {
 }
 
 // UnmarshalPostID will unmarshal the first section of the snr row known as the PostID
-func UnmarshalPostID(data []byte, postID *PostID) {
-	unmarshal(data, postID)
+func UnmarshalPostID(data []byte, postID *PostID) (int, error) {
+	return unmarshal(data, postID)
 }
 
 // UnmarshalData will unmarshal the second section of the snr row known as aviserdata
-func UnmarshalData(data []byte, v interface{}) {
-	unmarshal(data[postIDLength:], v)
+func UnmarshalData(data []byte, v interface{}) (int, error) {
+	return unmarshal(data[postIDLength:], v)
 }
 
 func doUnmarshal(data []byte, ref reflect.Value) (int, error) {
