@@ -8,7 +8,7 @@ import (
 )
 
 func TestValidUnmarshal(t *testing.T) {
-	f, err := os.Open("/home/dlq/qoorp/baslyft-800,840/AV5081-U1-160825.txt")
+	f, err := os.Open("./test/test_data.txt")
 	defer f.Close()
 	if err != nil {
 		fmt.Println(err)
