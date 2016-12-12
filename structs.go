@@ -1,5 +1,16 @@
 package snrpost
 
+// StartPost is the first line of every notification file
+type StartPost struct {
+	SekvNR      string      `snr:"8"`
+	UtskriftDat string      `snr:"8"`
+	KundNR      string      `snr:"10"`
+	UtskriftTid string      `snr:"8"`
+	_           interface{} `snr:"32"`
+	PostTyp100  string      `snr:"3"`
+	_           interface{} `snr:"331"`
+}
+
 // FirPost (7xx) ...
 type FirPost struct {
 	PostBeteck  string      `snr:"6" json:"post_beteck"`
@@ -38,6 +49,19 @@ type Post800 struct {
 	FirmaMark    string `snr:"1" json:"firma_mark"`
 	KonvMark     string `snr:"5" json:"konv_mark"`
 	RegLan       string `snr:"2" json:"reg_lan"`
+	SkyddslanGRP [21]struct {
+		Skyddslan     string `snr:"2" json:"skyddslan"`
+		SkyddslanMark string `snr:"1" json:"skyddslan_mark"`
+	}
+}
+
+// Post840 ...
+type Post840 struct {
+	NamnTyp      string `snr:"2"`
+	Namn         string `snr:"200"`
+	NamnRegDat   string `snr:"8"`
+	BeslStamma   string `snr:"1"`
+	BeslStadg    string `snr:"1"`
 	SkyddslanGRP [21]struct {
 		Skyddslan     string `snr:"2" json:"skyddslan"`
 		SkyddslanMark string `snr:"1" json:"skyddslan_mark"`
