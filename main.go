@@ -44,6 +44,11 @@ func unmarshal(data []byte, v interface{}) (int, error) {
 	return doUnmarshal(data, ref)
 }
 
+// UnmarshalStartPost will unmarshal the first line of the snr file
+func UnmarshalStartPost(data []byte, post *StartPost) (int, error) {
+	return unmarshal(data, post)
+}
+
 // UnmarshalFirPost will unmarshal the first section of the snr row known as the FirPost
 func UnmarshalFirPost(data []byte, post *FirPost) (int, error) {
 	return unmarshal(data, post)
@@ -57,6 +62,43 @@ func UnmarshalAviserPost(data []byte, post *AviserPost) (int, error) {
 // UnmarshalData will unmarshal the second section of the snr row known as aviserdata
 func UnmarshalData(data []byte, v interface{}) (int, error) {
 	return unmarshal(data[postIDLength:], v)
+}
+
+// SnrSize is the sum of snr tag values.
+func SnrSize(v interface{}) (int, error) {
+	snr := reflect.ValueOf(v)
+	if snr.Kind() == reflect.Ptr {
+		snr = snr.Elem()
+	}
+	return structSize(snr.Type())
+}
+
+//
+// Internal functions used only in this file
+//
+
+func structSize(refType reflect.Type) (int, error) {
+	result := 0
+	for i := 0; i < refType.NumField(); i++ {
+		field := refType.Field(i)
+		switch field.Type.Kind() {
+		case reflect.String, reflect.Interface:
+			length, err := getLen(field)
+			if err != nil {
+				return result, err
+			}
+			result += length
+		case reflect.Array:
+			s, err := structSize(field.Type.Elem())
+			if err != nil {
+				return s, err
+			}
+			result += s * field.Type.Len()
+		default:
+			return int(field.Type.Kind()), ErrUnsupportedType
+		}
+	}
+	return result, nil
 }
 
 func doUnmarshal(data []byte, ref reflect.Value) (int, error) {
