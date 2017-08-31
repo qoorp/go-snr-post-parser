@@ -3,8 +3,10 @@ package snrpost
 import (
 	"archive/zip"
 	"bufio"
+	"bytes"
 	"errors"
 	"fmt"
+	"io/ioutil"
 	"reflect"
 	"testing"
 )
@@ -134,11 +136,16 @@ func checkContent(post string) error {
 
 func exampleLines(file string) ([][]byte, error) {
 	result := [][]byte{}
-	r, err := zip.OpenReader(file)
+	bs, err := ioutil.ReadFile(file)
 	if err != nil {
 		return result, err
 	}
-	defer r.Close()
+	// If the ZIP file contents arrive in some other way than as a file...
+	b := bytes.NewReader(bs)
+	r, err := zip.NewReader(b, b.Size())
+	if err != nil {
+		return result, err
+	}
 	f := r.File[0]
 	rc, err := f.Open()
 	if err != nil {
