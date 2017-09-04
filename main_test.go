@@ -101,7 +101,8 @@ func Test_example(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	lines, err := exampleLines("./test/Filexempel dagliga aviseringar_20160211.zip")
+//	lines, err := exampleLines("./test/Filexempel dagliga aviseringar_20160211.zip")
+	lines, err := exampleLines("/home/bengt/sample.zip")
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -615,14 +616,14 @@ func postData811(result []byte) {
 	copy(result[postIDLength+12:], p.AkapPrecision)
 	copy(result[postIDLength+18:], p.Valuta1)
 	copy(result[postIDLength+21:], p.Akapl)
-	copy(result[postIDLength+37:], p.Valuta2)
-	copy(result[postIDLength+40:], p.Akaph)
-	copy(result[postIDLength+56:], p.Valuta3)
-	copy(result[postIDLength+59:], p.Nombel)
-	copy(result[postIDLength+71:], p.NombelPrecision)
-	copy(result[postIDLength+77:], p.Totantakt)
-	copy(result[postIDLength+95:], p.Antaktl)
-	copy(result[postIDLength+113:], p.Antakh)
+	copy(result[postIDLength+39:], p.Valuta2)
+	copy(result[postIDLength+42:], p.Akaph)
+	copy(result[postIDLength+60:], p.Valuta3)
+	copy(result[postIDLength+63:], p.Nombel)
+	copy(result[postIDLength+75:], p.NombelPrecision)
+	copy(result[postIDLength+81:], p.Totantakt)
+	copy(result[postIDLength+99:], p.Antaktl)
+	copy(result[postIDLength+117:], p.Antakth)
 }
 
 func postData812(result []byte) {
@@ -630,39 +631,43 @@ func postData812(result []byte) {
 	copy(result[postIDLength:], p.Aktieslag)
 	copy(result[postIDLength+30:], p.Antslag)
 	copy(result[postIDLength+48:], p.Rostvarde)
+	copy(result[postIDLength+58:], p.Antaktla)
+	copy(result[postIDLength+76:], p.Antaktho)
 }
 
 func postData814(result []byte) {
 	p := postPointer814()
-	copy(result[postIDLength+0:], p.Skvaluta)
+	copy(result[postIDLength:], p.Skvaluta)
 	copy(result[postIDLength+3:], p.Skbesldat)
 	copy(result[postIDLength+11:], p.Skmark)
 	copy(result[postIDLength+12:], p.Skbeslbel)
 	copy(result[postIDLength+24:], p.SkbeslbelPrecision)
 	copy(result[postIDLength+30:], p.Sklagst)
-	copy(result[postIDLength+46:], p.Skhogst)
-	copy(result[postIDLength+62:], p.Skteknatbel)
-	copy(result[postIDLength+74:], p.SkteknatbelPrecision)
-	copy(result[postIDLength+80:], p.Skkonvbel)
-	copy(result[postIDLength+92:], p.SkkonvbelPrecision)
-	copy(result[postIDLength+98:], p.Sktidutb1)
-	copy(result[postIDLength+106:], p.Sktidutb2)
-	copy(result[postIDLength+114:], p.Skoptionbel)
-	copy(result[postIDLength+126:], p.SkoptionbelPrecision)
-	copy(result[postIDLength+132:], p.Sktidnyt1)
-	copy(result[postIDLength+140:], p.Sktidnyt2)
-	copy(result[postIDLength+148:], p.Skapapokn)
-	copy(result[postIDLength+160:], p.SkapapoknPrecision)
-	copy(result[postIDLength+166:], p.Skaktieslag)
-	copy(result[postIDLength+206:], p.Toptant)
-	copy(result[postIDLength+218:], p.Anttoptl)
-	copy(result[postIDLength+234:], p.Anttopth)
-	copy(result[postIDLength+250:], p.Toptfrom)
-	copy(result[postIDLength+258:], p.Topttom)
-	copy(result[postIDLength+266:], p.Toptml)
-	copy(result[postIDLength+267:], p.Toptul)
-	copy(result[postIDLength+268:], p.Sktyp)
-	copy(result[postIDLength+269:], p.Skdelreg)
+	copy(result[postIDLength+42:], p.SklagstPrecision)
+	copy(result[postIDLength+48:], p.Skhogst)
+	copy(result[postIDLength+60:], p.SkhogstPrecision)
+	copy(result[postIDLength+66:], p.Skteknatbel)
+	copy(result[postIDLength+78:], p.SkteknatbelPrecision)
+	copy(result[postIDLength+84:], p.Skkonvbel)
+	copy(result[postIDLength+96:], p.SkkonvbelPrecision)
+	copy(result[postIDLength+102:], p.Sktidutb1)
+	copy(result[postIDLength+110:], p.Sktidutb2)
+	copy(result[postIDLength+118:], p.Skoptionbel)
+	copy(result[postIDLength+130:], p.SkoptionbelPrecision)
+	copy(result[postIDLength+136:], p.Sktidnyt1)
+	copy(result[postIDLength+144:], p.Sktidnyt2)
+	copy(result[postIDLength+152:], p.Skapapokn)
+	copy(result[postIDLength+164:], p.SkapapoknPrecision)
+	copy(result[postIDLength+170:], p.Skaktieslag)
+	copy(result[postIDLength+210:], p.Toptant)
+	copy(result[postIDLength+222:], p.Anttoptl)
+	copy(result[postIDLength+238:], p.Anttopth)
+	copy(result[postIDLength+254:], p.Toptfrom)
+	copy(result[postIDLength+262:], p.Topttom)
+	copy(result[postIDLength+270:], p.Toptml)
+	copy(result[postIDLength+271:], p.Toptul)
+	copy(result[postIDLength+272:], p.Sktyp)
+	copy(result[postIDLength+273:], p.Skdelreg)
 }
 
 func postData816(result []byte) {
@@ -781,25 +786,27 @@ func postData883(result []byte) {
 	copy(result[postIDLength+13:], p.Nyembel)
 	copy(result[postIDLength+25:], p.NyembelPrecision)
 	copy(result[postIDLength+31:], p.Nygrans1)
-	copy(result[postIDLength+47:], p.Nygrans2)
-	copy(result[postIDLength+63:], p.Nyndnombel)
-	copy(result[postIDLength+75:], p.NyndnombelPrecision)
-	copy(result[postIDLength+81:], p.Nyantaktier)
-	copy(result[postIDLength+99:], p.Nyokurs)
-	copy(result[postIDLength+111:], p.NyokursPrecision)
-	copy(result[postIDLength+117:], p.Nydelantal)
-	copy(result[postIDLength+135:], p.Nydelbel)
-	copy(result[postIDLength+147:], p.NydelbelPrecision)
-	copy(result[postIDLength+153:], p.Nyfullantal)
-	copy(result[postIDLength+171:], p.Nyfullbet)
-	copy(result[postIDLength+183:], p.NyfullbetPrecision)
-	copy(result[postIDLength+189:], p.Nyejenomfbel)
-	copy(result[postIDLength+201:], p.NyejenomfbelPrecision)
-	copy(result[postIDLength+207:], p.Nyejenomfant)
-	copy(result[postIDLength+225:], p.Nybetkon)
-	copy(result[postIDLength+227:], p.Nybetapp)
-	copy(result[postIDLength+229:], p.Nybetkvi)
-	copy(result[postIDLength+231:], p.Nydelreg)
+	copy(result[postIDLength+43:], p.Nygrans1Precision)
+	copy(result[postIDLength+49:], p.Nygrans2)
+	copy(result[postIDLength+61:], p.Nygrans2Precision)
+	copy(result[postIDLength+67:], p.Nyndnombel)
+	copy(result[postIDLength+79:], p.NyndnombelPrecision)
+	copy(result[postIDLength+85:], p.Nyantaktier)
+	copy(result[postIDLength+103:], p.Nyokurs)
+	copy(result[postIDLength+115:], p.NyokursPrecision)
+	copy(result[postIDLength+121:], p.Nydelantal)
+	copy(result[postIDLength+139:], p.Nydelbel)
+	copy(result[postIDLength+151:], p.NydelbelPrecision)
+	copy(result[postIDLength+157:], p.Nyfullantal)
+	copy(result[postIDLength+175:], p.Nyfullbet)
+	copy(result[postIDLength+187:], p.NyfullbetPrecision)
+	copy(result[postIDLength+193:], p.Nyejenomfbel)
+	copy(result[postIDLength+205:], p.NyejenomfbelPrecision)
+	copy(result[postIDLength+211:], p.Nyejenomfant)
+	copy(result[postIDLength+229:], p.Nybetkon)
+	copy(result[postIDLength+231:], p.Nybetapp)
+	copy(result[postIDLength+233:], p.Nybetkvi)
+	copy(result[postIDLength+235:], p.Nydelreg)
 }
 
 func postData886(result []byte) {
@@ -839,7 +846,9 @@ func postData886(result []byte) {
 	copy(result[postIDLength+194:], p.Ngenom7)
 	copy(result[postIDLength+196:], p.Ngenom8)
 	copy(result[postIDLength+198:], p.Nlagst)
-	copy(result[postIDLength+214:], p.Nhogst)
+	copy(result[postIDLength+210:], p.NlagstPrecision)
+	copy(result[postIDLength+216:], p.Nhogst)
+	copy(result[postIDLength+228:], p.NhogstPrecision)
 }
 
 func postData888(result []byte) {
@@ -870,6 +879,10 @@ func postData893(result []byte) {
 	copy(result[postIDLength+16:], p.Markomtyp8)
 	copy(result[postIDLength+17:], p.Markomtyp9)
 	copy(result[postIDLength+18:], p.Ejrevbsldat)
+	copy(result[postIDLength+26:], p.Omvandlingsforbehall)
+	copy(result[postIDLength+27:], p.Inlosenforbehall)
+	copy(result[postIDLength+28:], p.Likvidationsbestammelse)
+	copy(result[postIDLength+29:], p.Uppkopserbjudande)
 }
 
 func postData930(result []byte) {
@@ -1065,7 +1078,7 @@ func postPointer811() *Post811 {
 		NombelPrecision: "8",
 		Totantakt:       "9",
 		Antaktl:         "10",
-		Antakh:          "11",
+		Antakth:          "11",
 	}
 }
 
@@ -1074,6 +1087,8 @@ func postPointer812() *Post812 {
 		Aktieslag: "0",
 		Antslag:   "1",
 		Rostvarde: "2",
+		Antaktla:   "3",
+		Antaktho: "4",
 	}
 }
 
@@ -1089,25 +1104,27 @@ func postPointer814() *Post814 {
 		Skbeslbel:            "3",
 		SkbeslbelPrecision:   "4",
 		Sklagst:              "5",
-		Skhogst:              "6",
-		Skteknatbel:          "7",
-		SkteknatbelPrecision: "8",
-		Skkonvbel:            "9",
-		SkkonvbelPrecision:   "10",
-		Sktidutb1:            "11",
-		Sktidutb2:            "12",
-		Skoptionbel:          "13",
-		SkoptionbelPrecision: "14",
-		Sktidnyt1:            "15",
-		Sktidnyt2:            "16",
-		Skapapokn:            "17",
-		SkapapoknPrecision:   "18",
-		Skaktieslag:          "19",
-		Toptant:              "20",
-		Anttoptl:             "21",
-		Anttopth:             "22",
-		Toptfrom:             "23",
-		Topttom:              "24",
+		SklagstPrecision: "6",
+		Skhogst: "7",
+		SkhogstPrecision: "8",
+		Skteknatbel: "9",
+		SkteknatbelPrecision: "10",
+		Skkonvbel: "11",
+		SkkonvbelPrecision: "12",
+		Sktidutb1: "13",
+		Sktidutb2: "14",
+		Skoptionbel: "15",
+		SkoptionbelPrecision: "16",
+		Sktidnyt1: "17",
+		Sktidnyt2: "18",
+		Skapapokn: "19",
+		SkapapoknPrecision: "20",
+		Skaktieslag: "21",
+		Toptant: "22",
+		Anttoptl: "23",
+		Anttopth: "24",
+		Toptfrom: "25",
+		Topttom: "26",
 		Toptml:               "b",
 		Toptul:               "c",
 		Sktyp:                "d",
@@ -1245,31 +1262,33 @@ func postPointer882() *Post882 {
 
 func postPointer883() *Post883 {
 	return &Post883{
-		Nyvaluta:              "0",
-		Nybesldat:             "1",
-		Nybeslav:              "2",
-		Nyejfullbet:           "3",
-		Nyembel:               "4",
-		NyembelPrecision:      "5",
-		Nygrans1:              "6",
-		Nygrans2:              "7",
-		Nyndnombel:            "8",
-		NyndnombelPrecision:   "9",
-		Nyantaktier:           "10",
-		Nyokurs:               "11",
-		NyokursPrecision:      "12",
-		Nydelantal:            "13",
-		Nydelbel:              "14",
-		NydelbelPrecision:     "15",
-		Nyfullantal:           "16",
-		Nyfullbet:             "17",
-		NyfullbetPrecision:    "18",
-		Nyejenomfbel:          "19",
-		NyejenomfbelPrecision: "20",
-		Nyejenomfant:          "21",
-		Nybetkon:              "22",
-		Nybetapp:              "23",
-		Nybetkvi:              "24",
+		Nyvaluta: "0",
+		Nybesldat: "1",
+		Nybeslav: "2",
+		Nyejfullbet: "3",
+		Nyembel: "4",
+		NyembelPrecision: "5",
+		Nygrans1: "6",
+		Nygrans1Precision: "7",
+		Nygrans2: "8",
+		Nygrans2Precision: "9",
+		Nyndnombel: "10",
+		NyndnombelPrecision: "11",
+		Nyantaktier: "12",
+		Nyokurs: "13",
+		NyokursPrecision: "14",
+		Nydelantal: "15",
+		Nydelbel: "16",
+		NydelbelPrecision: "17",
+		Nyfullantal: "18",
+		Nyfullbet: "19",
+		NyfullbetPrecision: "20",
+		Nyejenomfbel: "21",
+		NyejenomfbelPrecision: "22",
+		Nyejenomfant: "23",
+		Nybetkon: "24",
+		Nybetapp: "25",
+		Nybetkvi: "26",
 		Nydelreg:              "a",
 	}
 }
@@ -1319,7 +1338,9 @@ func postPointer886() *Post886 {
 		Ngenom7:               "32",
 		Ngenom8:               "33",
 		Nlagst:                "34",
-		Nhogst:                "35",
+		NlagstPrecision:                "35",
+		Nhogst:                "36",
+		NhogstPrecision:                "37",
 	}
 }
 
@@ -1360,6 +1381,10 @@ func postPointer893() *Post893 {
 		Markomtyp8:  "9",
 		Markomtyp9:  "a",
 		Ejrevbsldat: "11",
+		Omvandlingsforbehall:  "a",
+		Inlosenforbehall:  "b",
+		Likvidationsbestammelse:  "c",
+		Uppkopserbjudande:  "d",
 	}
 }
 
