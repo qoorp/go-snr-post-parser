@@ -121,16 +121,16 @@ type Post811 struct {
 	AkapPrecision   string      `snr:"6" json:"akap_precision"`
 	Valuta1         string      `snr:"3" json:"valuta1"`
 	Akapl           string      `snr:"12" json:"akapl"`
-	AkaplPrecision   string      `snr:"6" json:"akapl_precision"`
+	AkaplPrecision  string      `snr:"6" json:"akapl_precision"`
 	Valuta2         string      `snr:"3" json:"valuta2"`
 	Akaph           string      `snr:"12" json:"akaph"`
-	AkaphPrecision   string      `snr:"6" json:"akaph_precision"`
+	AkaphPrecision  string      `snr:"6" json:"akaph_precision"`
 	Valuta3         string      `snr:"3" json:"valuta3"`
 	Nombel          string      `snr:"12" json:"nombel"`
 	NombelPrecision string      `snr:"6" json:"nombel_precision"`
 	Totantakt       string      `snr:"18" json:"totantakt"`
 	Antaktl         string      `snr:"18" json:"antaktl"`
-	Antakth          string      `snr:"18" json:"antakth"`
+	Antakth         string      `snr:"18" json:"antakth"`
 	_               interface{} `snr:"196"`
 }
 
@@ -139,7 +139,7 @@ type Post812 struct {
 	Aktieslag string      `snr:"30" json:"aktieslag"`
 	Antslag   string      `snr:"18" json:"antslag"`
 	Rostvarde string      `snr:"10" json:"rostvarde"`
-	Antaktla   string      `snr:"18" json:"antaktla"`
+	Antaktla  string      `snr:"18" json:"antaktla"`
 	Antaktho  string      `snr:"18" json:"antaktho"`
 	_         interface{} `snr:"237"`
 }
@@ -158,9 +158,9 @@ type Post814 struct {
 	Skbeslbel            string      `snr:"12" json:"skbeslbel"`
 	SkbeslbelPrecision   string      `snr:"6" json:"skbeslbel_precision"`
 	Sklagst              string      `snr:"12" json:"sklagst"`
-	SklagstPrecision   string      `snr:"6" json:"sklagst_precision"`
+	SklagstPrecision     string      `snr:"6" json:"sklagst_precision"`
 	Skhogst              string      `snr:"12" json:"skhogst"`
-	SkhogstPrecision   string      `snr:"6" json:"skhogst_precision"`
+	SkhogstPrecision     string      `snr:"6" json:"skhogst_precision"`
 	Skteknatbel          string      `snr:"12" json:"skteknatbel"`
 	SkteknatbelPrecision string      `snr:"6" json:"skteknatbel_precision"`
 	Skkonvbel            string      `snr:"12" json:"skkonvbel"`
@@ -329,9 +329,9 @@ type Post883 struct {
 	Nyembel               string      `snr:"12" json:"nyembel"`
 	NyembelPrecision      string      `snr:"6" json:"nyembel_precision"`
 	Nygrans1              string      `snr:"12" json:"nygrans1"`
-	Nygrans1Precision      string      `snr:"6" json:"nygrans1_precision"`
+	Nygrans1Precision     string      `snr:"6" json:"nygrans1_precision"`
 	Nygrans2              string      `snr:"12" json:"nygrans2"`
-	Nygrans2Precision      string      `snr:"6" json:"nygrans2_precision"`
+	Nygrans2Precision     string      `snr:"6" json:"nygrans2_precision"`
 	Nyndnombel            string      `snr:"12" json:"nyndnombel"`
 	NyndnombelPrecision   string      `snr:"6" json:"nyndnombel_precision"`
 	Nyantaktier           string      `snr:"18" json:"nyantaktier"`
@@ -402,9 +402,9 @@ type Post886 struct {
 	Ngenom7               string      `snr:"2" json:"ngenom7"`
 	Ngenom8               string      `snr:"2" json:"ngenom8"`
 	Nlagst                string      `snr:"12" json:"nlagst"`
-	NlagstPrecision    string      `snr:"6" json:"nlagst_precision"`
+	NlagstPrecision       string      `snr:"6" json:"nlagst_precision"`
 	Nhogst                string      `snr:"12" json:"nhogst"`
-	NhogstPrecision    string      `snr:"6" json:"nhogst_precision"`
+	NhogstPrecision       string      `snr:"6" json:"nhogst_precision"`
 	_                     interface{} `snr:"97"`
 }
 
@@ -437,23 +437,23 @@ type Post892 struct {
 
 // Post893 ...
 type Post893 struct {
-	Markforb    string      `snr:"1" json:"markforb"`
-	Markomtyp1  string      `snr:"1" json:"markomtyp1"`
-	Markomtyp2  string      `snr:"1" json:"markomtyp2"`
-	Markomtyp3  string      `snr:"1" json:"markomtyp3"`
-	Markomtyp4  string      `snr:"1" json:"markomtyp4"`
-	Markomtyp5  string      `snr:"1" json:"markomtyp5"`
-	Markomtyp6  string      `snr:"1" json:"markomtyp6"`
-	Forbfom     string      `snr:"8" json:"forbfom"`
-	Markomtyp7  string      `snr:"1" json:"markomtyp7"`
-	Markomtyp8  string      `snr:"1" json:"markomtyp8"`
-	Markomtyp9  string      `snr:"1" json:"markomtyp9"`
-	Ejrevbsldat string      `snr:"8" json:"ejrevbsldat"`
-	Omvandlingsforbehall  string      `snr:"1" json:"omvandlingsforbehall"`
-	Inlosenforbehall  string      `snr:"1" json:"inlosenforbehall"`
-	Likvidationsbestammelse  string      `snr:"1" json:"likvidationsbestammelse"`
-	Uppkopserbjudande  string      `snr:"1" json:"uppkopserbjudande"`
-	_           interface{} `snr:"301"`
+	Markforb                string      `snr:"1" json:"markforb"`
+	Markomtyp1              string      `snr:"1" json:"markomtyp1"`
+	Markomtyp2              string      `snr:"1" json:"markomtyp2"`
+	Markomtyp3              string      `snr:"1" json:"markomtyp3"`
+	Markomtyp4              string      `snr:"1" json:"markomtyp4"`
+	Markomtyp5              string      `snr:"1" json:"markomtyp5"`
+	Markomtyp6              string      `snr:"1" json:"markomtyp6"`
+	Forbfom                 string      `snr:"8" json:"forbfom"`
+	Markomtyp7              string      `snr:"1" json:"markomtyp7"`
+	Markomtyp8              string      `snr:"1" json:"markomtyp8"`
+	Markomtyp9              string      `snr:"1" json:"markomtyp9"`
+	Ejrevbsldat             string      `snr:"8" json:"ejrevbsldat"`
+	Omvandlingsforbehall    string      `snr:"1" json:"omvandlingsforbehall"`
+	Inlosenforbehall        string      `snr:"1" json:"inlosenforbehall"`
+	Likvidationsbestammelse string      `snr:"1" json:"likvidationsbestammelse"`
+	Uppkopserbjudande       string      `snr:"1" json:"uppkopserbjudande"`
+	_                       interface{} `snr:"301"`
 }
 
 // Post894 ...
