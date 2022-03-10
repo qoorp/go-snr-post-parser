@@ -429,6 +429,12 @@ type Post888 struct {
 	_             interface{} `snr:"264"`
 }
 
+// Post890 ...
+type Post890 struct {
+	Vsrad string      `snr:"320" json:"vsrad"`
+	_     interface{} `snr:"11"`
+}
+
 // Post892 ...
 type Post892 struct {
 	Karad string      `snr:"320" json:"karad"`
