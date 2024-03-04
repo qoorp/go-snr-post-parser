@@ -115,6 +115,27 @@ type Post810 struct {
 	_              interface{} `snr:"6"`
 }
 
+// Post811Pre2017...
+// Bolagsverket changed the structure sometime in 2017
+// This is support for the old format
+type Post811Pre2017 struct {
+	Akap            string      `snr:"12" json:"akap"`
+	AkapPrecision   string      `snr:"6" json:"akap_precision"`
+	Valuta1         string      `snr:"3" json:"valuta1"`
+	Akapl           string      `snr:"10" json:"akapl"`
+	AkaplPrecision  string      `snr:"6" json:"akapl_precision"`
+	Valuta2         string      `snr:"3" json:"valuta2"`
+	Akaph           string      `snr:"10" json:"akaph"`
+	AkaphPrecision  string      `snr:"6" json:"akaph_precision"`
+	Valuta3         string      `snr:"3" json:"valuta3"`
+	Nombel          string      `snr:"12" json:"nombel"`
+	NombelPrecision string      `snr:"6" json:"nombel_precision"`
+	Totantakt       string      `snr:"18" json:"totantakt"`
+	Antaktl         string      `snr:"18" json:"antaktl"`
+	Antakth         string      `snr:"18" json:"antakth"`
+	_               interface{} `snr:"200"`
+}
+
 // Post811 ...
 type Post811 struct {
 	Akap            string      `snr:"12" json:"akap"`
