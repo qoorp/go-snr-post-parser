@@ -221,7 +221,7 @@ type Post814Pre2017 struct {
 	Skhogst              string      `snr:"10" json:"skhogst"`
 	SkhogstPrecision     string      `snr:"6" json:"skhogst_precision"`
 	Skteknatbel          string      `snr:"12" json:"skteknatbel"`
-	SkteknatbelPrecision string      `snr:"2" json:"skteknatbel_precision"`
+	SkteknatbelPrecision string      `snr:"6" json:"skteknatbel_precision"`
 	Skkonvbel            string      `snr:"12" json:"skkonvbel"`
 	SkkonvbelPrecision   string      `snr:"6" json:"skkonvbel_precision"`
 	Sktidutb1            string      `snr:"8" json:"sktidutb1"`
