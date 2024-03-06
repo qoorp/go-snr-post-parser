@@ -412,6 +412,41 @@ type Post883 struct {
 	_                     interface{} `snr:"95"`
 }
 
+// Post883Pre2017...
+// Bolagsverket changed the structure sometime in 2017
+// This is support for the old format
+type Post883Pre2017 struct {
+	Nyvaluta              string      `snr:"3" json:"nyvaluta"`
+	Nybesldat             string      `snr:"8" json:"nybesldat"`
+	Nybeslav              string      `snr:"1" json:"nybeslav"`
+	Nyejfullbet           string      `snr:"1" json:"nyejfullbet"`
+	Nyembel               string      `snr:"12" json:"nyembel"`
+	NyembelPrecision      string      `snr:"6" json:"nyembel_precision"`
+	Nygrans1              string      `snr:"10" json:"nygrans1"`
+	Nygrans1Precision     string      `snr:"6" json:"nygrans1_precision"`
+	Nygrans2              string      `snr:"10" json:"nygrans2"`
+	Nygrans2Precision     string      `snr:"6" json:"nygrans2_precision"`
+	Nyndnombel            string      `snr:"12" json:"nyndnombel"`
+	NyndnombelPrecision   string      `snr:"6" json:"nyndnombel_precision"`
+	Nyantaktier           string      `snr:"18" json:"nyantaktier"`
+	Nyokurs               string      `snr:"12" json:"nyokurs"`
+	NyokursPrecision      string      `snr:"6" json:"nyokurs_precision"`
+	Nydelantal            string      `snr:"18" json:"nydelantal"`
+	Nydelbel              string      `snr:"12" json:"nydelbel"`
+	NydelbelPrecision     string      `snr:"6" json:"nydelbel_precision"`
+	Nyfullantal           string      `snr:"18" json:"nyfullantal"`
+	Nyfullbet             string      `snr:"12" json:"nyfullbet"`
+	NyfullbetPrecision    string      `snr:"6" json:"nyfullbet_precision"`
+	Nyejenomfbel          string      `snr:"12" json:"nyejenomfbel"`
+	NyejenomfbelPrecision string      `snr:"6" json:"nyejenomfbel_precision"`
+	Nyejenomfant          string      `snr:"18" json:"nyejenomfant"`
+	Nybetkon              string      `snr:"2" json:"nybetkon"`
+	Nybetapp              string      `snr:"2" json:"nybetapp"`
+	Nybetkvi              string      `snr:"2" json:"nybetkvi"`
+	Nydelreg              string      `snr:"1" json:"nydelreg"`
+	_                     interface{} `snr:"99"`
+}
+
 // Post884 ...
 type Post884 struct {
 	Nyrad string      `snr:"320" json:"forad"`
