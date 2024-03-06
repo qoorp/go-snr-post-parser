@@ -207,6 +207,44 @@ type Post814 struct {
 	_                    interface{} `snr:"57"`
 }
 
+// Post814Pre2017...
+// Bolagsverket changed the structure sometime in 2017
+// This is support for the old format
+type Post814Pre2017 struct {
+	Skvaluta             string      `snr:"3" json:"skvaluta"`
+	Skbesldat            string      `snr:"8" json:"skbesldat"`
+	Skmark               string      `snr:"1" json:"skmark"`
+	Skbeslbel            string      `snr:"12" json:"skbeslbel"`
+	SkbeslbelPrecision   string      `snr:"6" json:"skbeslbel_precision"`
+	Sklagst              string      `snr:"10" json:"sklagst"`
+	SklagstPrecision     string      `snr:"6" json:"sklagst_precision"`
+	Skhogst              string      `snr:"10" json:"skhogst"`
+	SkhogstPrecision     string      `snr:"6" json:"skhogst_precision"`
+	Skteknatbel          string      `snr:"12" json:"skteknatbel"`
+	SkteknatbelPrecision string      `snr:"2" json:"skteknatbel_precision"`
+	Skkonvbel            string      `snr:"12" json:"skkonvbel"`
+	SkkonvbelPrecision   string      `snr:"6" json:"skkonvbel_precision"`
+	Sktidutb1            string      `snr:"8" json:"sktidutb1"`
+	Sktidutb2            string      `snr:"8" json:"sktidutb2"`
+	Skoptionbel          string      `snr:"12" json:"skoptionbel"`
+	SkoptionbelPrecision string      `snr:"6" json:"skoptionbel_precision"`
+	Sktidnyt1            string      `snr:"8" json:"sktidnyt1"`
+	Sktidnyt2            string      `snr:"8" json:"sktidnyt2"`
+	Skapapokn            string      `snr:"12" json:"skapapokn"`
+	SkapapoknPrecision   string      `snr:"6" json:"skapapokn_precision"`
+	Skaktieslag          string      `snr:"40" json:"skaktieslag"`
+	Toptant              string      `snr:"12" json:"toptant"`
+	Anttoptl             string      `snr:"16" json:"anttoptl"`
+	Anttopth             string      `snr:"16" json:"anttopth"`
+	Toptfrom             string      `snr:"8" json:"toptfrom"`
+	Topttom              string      `snr:"8" json:"topttom"`
+	Toptml               string      `snr:"1" json:"toptml"`
+	Toptul               string      `snr:"1" json:"toptul"`
+	Sktyp                string      `snr:"1" json:"sktyp"`
+	Skdelreg             string      `snr:"1" json:"skdelreg"`
+	_                    interface{} `snr:"61"`
+}
+
 // Post815 ...
 type Post815 struct {
 	Skrad string      `snr:"320" json:"skrad"`
