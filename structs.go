@@ -421,10 +421,8 @@ type Post883Pre2017 struct {
 	Nyejfullbet           string      `snr:"1" json:"nyejfullbet"`
 	Nyembel               string      `snr:"12" json:"nyembel"`
 	NyembelPrecision      string      `snr:"6" json:"nyembel_precision"`
-	Nygrans1              string      `snr:"10" json:"nygrans1"`
-	Nygrans1Precision     string      `snr:"6" json:"nygrans1_precision"`
-	Nygrans2              string      `snr:"10" json:"nygrans2"`
-	Nygrans2Precision     string      `snr:"6" json:"nygrans2_precision"`
+	Nygrans1              string      `snr:"16" json:"nygrans1"`
+	Nygrans2              string      `snr:"16" json:"nygrans2"`
 	_                     interface{} `snr:"18"` // NYNOMBEL, not used for AB, BAB, FAB
 	Nyantaktier           string      `snr:"18" json:"nyantaktier"`
 	Nyokurs               string      `snr:"12" json:"nyokurs"`
@@ -498,6 +496,49 @@ type Post886 struct {
 	Nhogst                string      `snr:"12" json:"nhogst"`
 	NhogstPrecision       string      `snr:"6" json:"nhogst_precision"`
 	_                     interface{} `snr:"97"`
+}
+
+// Post886Pre2017...
+// Bolagsverket changed the structure sometime in 2017
+// This is support for the old format
+type Post886Pre2017 struct {
+	Nevaluta              string      `snr:"3" json:"nevaluta"`
+	Nebesldat             string      `snr:"8" json:"nebesldat"`
+	Ngenom1               string      `snr:"2" json:"ngenom1"`
+	Ngenom2               string      `snr:"2" json:"ngenom2"`
+	Ngenom3               string      `snr:"2" json:"ngenom3"`
+	Ngenom4               string      `snr:"2" json:"ngenom4"`
+	Ngenom5               string      `snr:"2" json:"ngenom5"`
+	Ngenom6               string      `snr:"2" json:"ngenom6"`
+	Nandamal1             string      `snr:"2" json:"nandamal1"`
+	Nandamal2             string      `snr:"2" json:"nandamal2"`
+	Nandamal3             string      `snr:"2" json:"nandamal3"`
+	Nandamal4             string      `snr:"2" json:"nandamal4"`
+	Nandamal5             string      `snr:"2" json:"nandamal5"`
+	Nandamal6             string      `snr:"2" json:"nandamal6"`
+	Nembel                string      `snr:"12" json:"nembel"`
+	NembelPrecision       string      `snr:"6" json:"nembel_precision"`
+	Netotbeslbet          string      `snr:"12" json:"netotbeslbet"`
+	NetotbeslbetPrecision string      `snr:"6" json:"netotbeslbet_precision"`
+	Nenombel              string      `snr:"12" json:"nenombel"`
+	NenombelPrecision     string      `snr:"6" json:"nenombel_precision"`
+	Neejvarkst            string      `snr:"1" json:"neejvarkst"`
+	Neantaktier           string      `snr:"18" json:"neantaktier"`
+	Netilstbesl           string      `snr:"8" json:"netilstbesl"`
+	Netilstav             string      `snr:"4" json:"netilstav"`
+	Netilstdat            string      `snr:"8" json:"netilstdat"`
+	Netillsbel            string      `snr:"12" json:"netillsbel"`
+	NetillsbelPrecision   string      `snr:"6" json:"netillsbel_precision"`
+	Neforfdat             string      `snr:"8" json:"neforfdat"`
+	Neforfav              string      `snr:"4" json:"neforfav"`
+	Neforfbel             string      `snr:"12" json:"neforfbel"`
+	NeforfbelPrecision    string      `snr:"6" json:"neforfbel_precision"`
+	Neforfanta            string      `snr:"18" json:"neforfanta"`
+	Ngenom7               string      `snr:"2" json:"ngenom7"`
+	Ngenom8               string      `snr:"2" json:"ngenom8"`
+	Nlagst                string      `snr:"16" json:"nlagst"`
+	Nhogst                string      `snr:"16" json:"nhogst"`
+	_                     interface{} `snr:"101"`
 }
 
 // Post887 ...
