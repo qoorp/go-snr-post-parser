@@ -391,8 +391,7 @@ type Post883 struct {
 	Nygrans1Precision     string      `snr:"6" json:"nygrans1_precision"`
 	Nygrans2              string      `snr:"12" json:"nygrans2"`
 	Nygrans2Precision     string      `snr:"6" json:"nygrans2_precision"`
-	Nyndnombel            string      `snr:"12" json:"nyndnombel"`
-	NyndnombelPrecision   string      `snr:"6" json:"nyndnombel_precision"`
+	_                     interface{} `snr:"18"` // NYNOMBEL, not used for AB, BAB, FAB
 	Nyantaktier           string      `snr:"18" json:"nyantaktier"`
 	Nyokurs               string      `snr:"12" json:"nyokurs"`
 	NyokursPrecision      string      `snr:"6" json:"nyokurs_precision"`
@@ -426,8 +425,7 @@ type Post883Pre2017 struct {
 	Nygrans1Precision     string      `snr:"6" json:"nygrans1_precision"`
 	Nygrans2              string      `snr:"10" json:"nygrans2"`
 	Nygrans2Precision     string      `snr:"6" json:"nygrans2_precision"`
-	Nyndnombel            string      `snr:"12" json:"nyndnombel"`
-	NyndnombelPrecision   string      `snr:"6" json:"nyndnombel_precision"`
+	_                     interface{} `snr:"18"` // NYNOMBEL, not used for AB, BAB, FAB
 	Nyantaktier           string      `snr:"18" json:"nyantaktier"`
 	Nyokurs               string      `snr:"12" json:"nyokurs"`
 	NyokursPrecision      string      `snr:"6" json:"nyokurs_precision"`
