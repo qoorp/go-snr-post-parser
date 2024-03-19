@@ -797,7 +797,6 @@ func postData886(result []byte) {
 	copy(result[postIDLength+33:], p.Nandamal6)
 	copy(result[postIDLength+35:], p.Nembel)
 	copy(result[postIDLength+53:], p.Netotbeslbet)
-	copy(result[postIDLength+71:], p.Nenombel)
 	copy(result[postIDLength+89:], p.Neejvarkst)
 	copy(result[postIDLength+90:], p.Neantaktier)
 	copy(result[postIDLength+108:], p.Netilstbesl)
@@ -1271,7 +1270,6 @@ func postPointer886() *Post886_230204 {
 		Nandamal6:    "13",
 		Nembel:       "14",
 		Netotbeslbet: "16",
-		Nenombel:     "18",
 		Neejvarkst:   "a",
 		Neantaktier:  "21",
 		Netilstbesl:  "22",

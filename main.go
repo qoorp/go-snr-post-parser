@@ -117,15 +117,18 @@ func doUnmarshal(data []byte, ref reflect.Value) (int, error) {
 			if err != nil {
 				return readPos, err
 			}
-			fn := ref.FieldByName(field.Name)
-			var value string
-			if splitAt < length {
-				v := string(b)
-				value = v[:splitAt] + "." + v[splitAt:]
-			} else {
-				value = string(b)
+			// Ignore values where the length doesn't match, probably NULL
+			if len(b) == length {
+				fn := ref.FieldByName(field.Name)
+				var value string
+				if splitAt < length {
+					v := string(b)
+					value = v[:splitAt] + "." + v[splitAt:]
+				} else {
+					value = string(b)
+				}
+				fn.SetString(strings.TrimSpace(value))
 			}
-			fn.SetString(strings.TrimSpace(value))
 			readPos += length
 		case reflect.Array:
 			fn := ref.FieldByName(field.Name)

@@ -545,7 +545,7 @@ type Post886_151205 struct {
 	_            interface{} `snr:"18" `
 	Neejvarkst   string      `snr:"1" json:"neejvarkst"`
 	Neantaktier  string      `snr:"18" json:"neantaktier"`
-	Netilstbesl  string      `snr:"8" json:"netilstbesl"`
+	_            interface{} `snr:"8"`
 	Netilstav    string      `snr:"4" json:"netilstav"`
 	Netilstdat   string      `snr:"8" json:"netilstdat"`
 	Netillsbel   string      `snr:"12,6" json:"netillsbel"`
