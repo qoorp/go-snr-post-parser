@@ -115,44 +115,51 @@ type Post810 struct {
 	_              interface{} `snr:"6"`
 }
 
-// Post811Pre2017...
-// Bolagsverket changed the structure sometime in 2017
-// This is support for the old format
-type Post811Pre2017 struct {
-	Akap            string      `snr:"12" json:"akap"`
-	AkapPrecision   string      `snr:"6" json:"akap_precision"`
-	Valuta1         string      `snr:"3" json:"valuta1"`
-	Akapl           string      `snr:"10" json:"akapl"`
-	AkaplPrecision  string      `snr:"6" json:"akapl_precision"`
-	Valuta2         string      `snr:"3" json:"valuta2"`
-	Akaph           string      `snr:"10" json:"akaph"`
-	AkaphPrecision  string      `snr:"6" json:"akaph_precision"`
-	Valuta3         string      `snr:"3" json:"valuta3"`
-	Nombel          string      `snr:"12" json:"nombel"`
-	NombelPrecision string      `snr:"6" json:"nombel_precision"`
-	Totantakt       string      `snr:"18" json:"totantakt"`
-	Antaktl         string      `snr:"18" json:"antaktl"`
-	Antakth         string      `snr:"18" json:"antakth"`
-	_               interface{} `snr:"200"`
+// Post811_170211 ... Version 1.0
+// As of 2023-10-14 this is still valid
+type Post811_170211 struct {
+	Akap      string      `snr:"12,6" json:"akap"`
+	Valuta1   string      `snr:"3" json:"valuta1"`
+	Akapl     string      `snr:"12,6" json:"akapl"`
+	Valuta2   string      `snr:"3" json:"valuta2"`
+	Akaph     string      `snr:"12,6" json:"akaph"`
+	Valuta3   string      `snr:"3" json:"valuta3"`
+	Nombel    string      `snr:"12,6" json:"nombel"`
+	Totantakt string      `snr:"18" json:"totantakt"`
+	Antaktl   string      `snr:"18" json:"antaktl"`
+	Antakth   string      `snr:"18" json:"antakth"`
+	_         interface{} `snr:"196"`
 }
 
-// Post811 ...
-type Post811 struct {
-	Akap            string      `snr:"12" json:"akap"`
-	AkapPrecision   string      `snr:"6" json:"akap_precision"`
-	Valuta1         string      `snr:"3" json:"valuta1"`
-	Akapl           string      `snr:"12" json:"akapl"`
-	AkaplPrecision  string      `snr:"6" json:"akapl_precision"`
-	Valuta2         string      `snr:"3" json:"valuta2"`
-	Akaph           string      `snr:"12" json:"akaph"`
-	AkaphPrecision  string      `snr:"6" json:"akaph_precision"`
-	Valuta3         string      `snr:"3" json:"valuta3"`
-	Nombel          string      `snr:"12" json:"nombel"`
-	NombelPrecision string      `snr:"6" json:"nombel_precision"`
-	Totantakt       string      `snr:"18" json:"totantakt"`
-	Antaktl         string      `snr:"18" json:"antaktl"`
-	Antakth         string      `snr:"18" json:"antakth"`
-	_               interface{} `snr:"196"`
+// Post811_161008 ... Version 4.9
+type Post811_161008 struct {
+	Akap      string      `snr:"12,6" json:"akap"`
+	Valuta1   string      `snr:"3" json:"valuta1"`
+	Akapl     string      `snr:"12,6" json:"akapl"`
+	Valuta2   string      `snr:"3" json:"valuta2"`
+	Akaph     string      `snr:"12,6" json:"akaph"`
+	Valuta3   string      `snr:"3" json:"valuta3"`
+	Nombel    string      `snr:"12,6" json:"nombel"`
+	Totantakt string      `snr:"18" json:"totantakt"`
+	Antaktl   string      `snr:"18" json:"antaktl"`
+	Antakth   string      `snr:"18" json:"antakth"`
+	_         interface{} `snr:"194"`
+}
+
+// Post811_151205 ... Version 4.7
+// This is valid from 151205, but could also work for earlier versions, double check the specs
+type Post811_151205 struct {
+	Akap      string      `snr:"12,6" json:"akap"`
+	Valuta1   string      `snr:"3" json:"valuta1"`
+	Akapl     string      `snr:"16" json:"akapl"`
+	Valuta2   string      `snr:"3" json:"valuta2"`
+	Akaph     string      `snr:"16" json:"akaph"`
+	Valuta3   string      `snr:"3" json:"valuta3"`
+	Nombel    string      `snr:"12,6" json:"nombel"`
+	Totantakt string      `snr:"18" json:"totantakt"`
+	Antaktl   string      `snr:"18" json:"antaktl"`
+	Antakth   string      `snr:"18" json:"antakth"`
+	_         interface{} `snr:"200"`
 }
 
 // Post812 ...
@@ -171,78 +178,64 @@ type Post813 struct {
 	_     interface{} `snr:"11"`
 }
 
-// Post814 ...
-type Post814 struct {
-	Skvaluta             string      `snr:"3" json:"skvaluta"`
-	Skbesldat            string      `snr:"8" json:"skbesldat"`
-	Skmark               string      `snr:"1" json:"skmark"`
-	Skbeslbel            string      `snr:"12" json:"skbeslbel"`
-	SkbeslbelPrecision   string      `snr:"6" json:"skbeslbel_precision"`
-	Sklagst              string      `snr:"12" json:"sklagst"`
-	SklagstPrecision     string      `snr:"6" json:"sklagst_precision"`
-	Skhogst              string      `snr:"12" json:"skhogst"`
-	SkhogstPrecision     string      `snr:"6" json:"skhogst_precision"`
-	Skteknatbel          string      `snr:"12" json:"skteknatbel"`
-	SkteknatbelPrecision string      `snr:"6" json:"skteknatbel_precision"`
-	Skkonvbel            string      `snr:"12" json:"skkonvbel"`
-	SkkonvbelPrecision   string      `snr:"6" json:"skkonvbel_precision"`
-	Sktidutb1            string      `snr:"8" json:"sktidutb1"`
-	Sktidutb2            string      `snr:"8" json:"sktidutb2"`
-	Skoptionbel          string      `snr:"12" json:"skoptionbel"`
-	SkoptionbelPrecision string      `snr:"6" json:"skoptionbel_precision"`
-	Sktidnyt1            string      `snr:"8" json:"sktidnyt1"`
-	Sktidnyt2            string      `snr:"8" json:"sktidnyt2"`
-	Skapapokn            string      `snr:"12" json:"skapapokn"`
-	SkapapoknPrecision   string      `snr:"6" json:"skapapokn_precision"`
-	Skaktieslag          string      `snr:"40" json:"skaktieslag"`
-	Toptant              string      `snr:"12" json:"toptant"`
-	Anttoptl             string      `snr:"16" json:"anttoptl"`
-	Anttopth             string      `snr:"16" json:"anttopth"`
-	Toptfrom             string      `snr:"8" json:"toptfrom"`
-	Topttom              string      `snr:"8" json:"topttom"`
-	Toptml               string      `snr:"1" json:"toptml"`
-	Toptul               string      `snr:"1" json:"toptul"`
-	Sktyp                string      `snr:"1" json:"sktyp"`
-	Skdelreg             string      `snr:"1" json:"skdelreg"`
-	_                    interface{} `snr:"57"`
+// Post814_161008 ...Version 4.9
+// As of 2023-10-14 this is still valid
+type Post814_161008 struct {
+	Skvaluta    string      `snr:"3" json:"skvaluta"`
+	Skbesldat   string      `snr:"8" json:"skbesldat"`
+	Skmark      string      `snr:"1" json:"skmark"`
+	Skbeslbel   string      `snr:"12,6" json:"skbeslbel"`
+	Sklagst     string      `snr:"12,6" json:"sklagst"`
+	Skhogst     string      `snr:"12,6" json:"skhogst"`
+	Skteknatbel string      `snr:"12,6" json:"skteknatbel"`
+	Skkonvbel   string      `snr:"12,6" json:"skkonvbel"`
+	Sktidutb1   string      `snr:"8" json:"sktidutb1"`
+	Sktidutb2   string      `snr:"8" json:"sktidutb2"`
+	Skoptionbel string      `snr:"12,6" json:"skoptionbel"`
+	Sktidnyt1   string      `snr:"8" json:"sktidnyt1"`
+	Sktidnyt2   string      `snr:"8" json:"sktidnyt2"`
+	Skapapokn   string      `snr:"12,6" json:"skapapokn"`
+	Skaktieslag string      `snr:"40" json:"skaktieslag"`
+	Toptant     string      `snr:"12" json:"toptant"`
+	Anttoptl    string      `snr:"16" json:"anttoptl"`
+	Anttopth    string      `snr:"16" json:"anttopth"`
+	Toptfrom    string      `snr:"8" json:"toptfrom"`
+	Topttom     string      `snr:"8" json:"topttom"`
+	Toptml      string      `snr:"1" json:"toptml"`
+	Toptul      string      `snr:"1" json:"toptul"`
+	Sktyp       string      `snr:"1" json:"sktyp"`
+	Skdelreg    string      `snr:"1" json:"skdelreg"`
+	_           interface{} `snr:"57"`
 }
 
-// Post814Pre2017...
-// Bolagsverket changed the structure sometime in 2017
-// This is support for the old format
-type Post814Pre2017 struct {
-	Skvaluta             string      `snr:"3" json:"skvaluta"`
-	Skbesldat            string      `snr:"8" json:"skbesldat"`
-	Skmark               string      `snr:"1" json:"skmark"`
-	Skbeslbel            string      `snr:"12" json:"skbeslbel"`
-	SkbeslbelPrecision   string      `snr:"6" json:"skbeslbel_precision"`
-	Sklagst              string      `snr:"10" json:"sklagst"`
-	SklagstPrecision     string      `snr:"6" json:"sklagst_precision"`
-	Skhogst              string      `snr:"10" json:"skhogst"`
-	SkhogstPrecision     string      `snr:"6" json:"skhogst_precision"`
-	Skteknatbel          string      `snr:"12" json:"skteknatbel"`
-	SkteknatbelPrecision string      `snr:"6" json:"skteknatbel_precision"`
-	Skkonvbel            string      `snr:"12" json:"skkonvbel"`
-	SkkonvbelPrecision   string      `snr:"6" json:"skkonvbel_precision"`
-	Sktidutb1            string      `snr:"8" json:"sktidutb1"`
-	Sktidutb2            string      `snr:"8" json:"sktidutb2"`
-	Skoptionbel          string      `snr:"12" json:"skoptionbel"`
-	SkoptionbelPrecision string      `snr:"6" json:"skoptionbel_precision"`
-	Sktidnyt1            string      `snr:"8" json:"sktidnyt1"`
-	Sktidnyt2            string      `snr:"8" json:"sktidnyt2"`
-	Skapapokn            string      `snr:"12" json:"skapapokn"`
-	SkapapoknPrecision   string      `snr:"6" json:"skapapokn_precision"`
-	Skaktieslag          string      `snr:"40" json:"skaktieslag"`
-	Toptant              string      `snr:"12" json:"toptant"`
-	Anttoptl             string      `snr:"16" json:"anttoptl"`
-	Anttopth             string      `snr:"16" json:"anttopth"`
-	Toptfrom             string      `snr:"8" json:"toptfrom"`
-	Topttom              string      `snr:"8" json:"topttom"`
-	Toptml               string      `snr:"1" json:"toptml"`
-	Toptul               string      `snr:"1" json:"toptul"`
-	Sktyp                string      `snr:"1" json:"sktyp"`
-	Skdelreg             string      `snr:"1" json:"skdelreg"`
-	_                    interface{} `snr:"61"`
+// Post814_151205 ... Version 4.7
+// This is valid from 151205, but could also work for earlier versions, double check the specs
+type Post814_151205 struct {
+	Skvaluta    string      `snr:"3" json:"skvaluta"`
+	Skbesldat   string      `snr:"8" json:"skbesldat"`
+	Skmark      string      `snr:"1" json:"skmark"`
+	Skbeslbel   string      `snr:"12,6" json:"skbeslbel"`
+	Sklagst     string      `snr:"16" json:"sklagst"`
+	Skhogst     string      `snr:"16" json:"skhogst"`
+	Skteknatbel string      `snr:"12,6" json:"skteknatbel"`
+	Skkonvbel   string      `snr:"12,6" json:"skkonvbel"`
+	Sktidutb1   string      `snr:"8" json:"sktidutb1"`
+	Sktidutb2   string      `snr:"8" json:"sktidutb2"`
+	Skoptionbel string      `snr:"12,6" json:"skoptionbel"`
+	Sktidnyt1   string      `snr:"8" json:"sktidnyt1"`
+	Sktidnyt2   string      `snr:"8" json:"sktidnyt2"`
+	Skapapokn   string      `snr:"12,6" json:"skapapokn"`
+	Skaktieslag string      `snr:"40" json:"skaktieslag"`
+	Toptant     string      `snr:"12" json:"toptant"`
+	Anttoptl    string      `snr:"16" json:"anttoptl"`
+	Anttopth    string      `snr:"16" json:"anttopth"`
+	Toptfrom    string      `snr:"8" json:"toptfrom"`
+	Topttom     string      `snr:"8" json:"topttom"`
+	Toptml      string      `snr:"1" json:"toptml"`
+	Toptul      string      `snr:"1" json:"toptul"`
+	Sktyp       string      `snr:"1" json:"sktyp"`
+	Skdelreg    string      `snr:"1" json:"skdelreg"`
+	_           interface{} `snr:"61"`
 }
 
 // Post815 ...
@@ -379,8 +372,9 @@ type Post882 struct {
 	_     interface{} `snr:"11"`
 }
 
-// Post883 ...
-type Post883 struct {
+// Post883_161008 ... Version 4.9
+// As of 2023-10-14 this is still valid
+type Post883_161008 struct {
 	Nyvaluta              string      `snr:"3" json:"nyvaluta"`
 	Nybesldat             string      `snr:"8" json:"nybesldat"`
 	Nybeslav              string      `snr:"1" json:"nybeslav"`
@@ -411,10 +405,9 @@ type Post883 struct {
 	_                     interface{} `snr:"95"`
 }
 
-// Post883Pre2017...
-// Bolagsverket changed the structure sometime in 2017
-// This is support for the old format
-type Post883Pre2017 struct {
+// Post883_151205...
+// This is valid from 151205, but could also work for earlier versions, double check the specs
+type Post883_151205 struct {
 	Nyvaluta              string      `snr:"3" json:"nyvaluta"`
 	Nybesldat             string      `snr:"8" json:"nybesldat"`
 	Nybeslav              string      `snr:"1" json:"nybeslav"`
@@ -455,90 +448,116 @@ type Post885 struct {
 	_     interface{} `snr:"11"`
 }
 
-// Post886 ...
-type Post886 struct {
-	Nevaluta              string      `snr:"3" json:"nevaluta"`
-	Nebesldat             string      `snr:"8" json:"nebesldat"`
-	Ngenom1               string      `snr:"2" json:"ngenom1"`
-	Ngenom2               string      `snr:"2" json:"ngenom2"`
-	Ngenom3               string      `snr:"2" json:"ngenom3"`
-	Ngenom4               string      `snr:"2" json:"ngenom4"`
-	Ngenom5               string      `snr:"2" json:"ngenom5"`
-	Ngenom6               string      `snr:"2" json:"ngenom6"`
-	Nandamal1             string      `snr:"2" json:"nandamal1"`
-	Nandamal2             string      `snr:"2" json:"nandamal2"`
-	Nandamal3             string      `snr:"2" json:"nandamal3"`
-	Nandamal4             string      `snr:"2" json:"nandamal4"`
-	Nandamal5             string      `snr:"2" json:"nandamal5"`
-	Nandamal6             string      `snr:"2" json:"nandamal6"`
-	Nembel                string      `snr:"12" json:"nembel"`
-	NembelPrecision       string      `snr:"6" json:"nembel_precision"`
-	Netotbeslbet          string      `snr:"12" json:"netotbeslbet"`
-	NetotbeslbetPrecision string      `snr:"6" json:"netotbeslbet_precision"`
-	Nenombel              string      `snr:"12" json:"nenombel"`
-	NenombelPrecision     string      `snr:"6" json:"nenombel_precision"`
-	Neejvarkst            string      `snr:"1" json:"neejvarkst"`
-	Neantaktier           string      `snr:"18" json:"neantaktier"`
-	Netilstbesl           string      `snr:"8" json:"netilstbesl"`
-	Netilstav             string      `snr:"4" json:"netilstav"`
-	Netilstdat            string      `snr:"8" json:"netilstdat"`
-	Netillsbel            string      `snr:"12" json:"netillsbel"`
-	NetillsbelPrecision   string      `snr:"6" json:"netillsbel_precision"`
-	Neforfdat             string      `snr:"8" json:"neforfdat"`
-	Neforfav              string      `snr:"4" json:"neforfav"`
-	Neforfbel             string      `snr:"12" json:"neforfbel"`
-	NeforfbelPrecision    string      `snr:"6" json:"neforfbel_precision"`
-	Neforfanta            string      `snr:"18" json:"neforfanta"`
-	Ngenom7               string      `snr:"2" json:"ngenom7"`
-	Ngenom8               string      `snr:"2" json:"ngenom8"`
-	Nlagst                string      `snr:"12" json:"nlagst"`
-	NlagstPrecision       string      `snr:"6" json:"nlagst_precision"`
-	Nhogst                string      `snr:"12" json:"nhogst"`
-	NhogstPrecision       string      `snr:"6" json:"nhogst_precision"`
-	_                     interface{} `snr:"97"`
+// Post886_230204 ... Version 1.7
+// As of 2023-10-14 this is still valid
+type Post886_230204 struct {
+	Nevaluta     string      `snr:"3" json:"nevaluta"`
+	Nebesldat    string      `snr:"8" json:"nebesldat"`
+	Ngenom1      string      `snr:"2" json:"ngenom1"`
+	Ngenom2      string      `snr:"2" json:"ngenom2"`
+	Ngenom3      string      `snr:"2" json:"ngenom3"`
+	Ngenom4      string      `snr:"2" json:"ngenom4"`
+	Ngenom5      string      `snr:"2" json:"ngenom5"`
+	Ngenom6      string      `snr:"2" json:"ngenom6"`
+	Nandamal1    string      `snr:"2" json:"nandamal1"`
+	Nandamal2    string      `snr:"2" json:"nandamal2"`
+	Nandamal3    string      `snr:"2" json:"nandamal3"`
+	Nandamal4    string      `snr:"2" json:"nandamal4"`
+	Nandamal5    string      `snr:"2" json:"nandamal5"`
+	Nandamal6    string      `snr:"2" json:"nandamal6"`
+	Nembel       string      `snr:"12,6" json:"nembel"`
+	Netotbeslbet string      `snr:"12,6" json:"netotbeslbet"`
+	Nenombel     string      `snr:"12,6" json:"nenombel"`
+	Neejvarkst   string      `snr:"1" json:"neejvarkst"`
+	Neantaktier  string      `snr:"18" json:"neantaktier"`
+	Netilstbesl  string      `snr:"8" json:"netilstbesl"`
+	Netilstav    string      `snr:"4" json:"netilstav"`
+	Netilstdat   string      `snr:"8" json:"netilstdat"`
+	Netillsbel   string      `snr:"12,6" json:"netillsbel"`
+	Neforfdat    string      `snr:"8" json:"neforfdat"`
+	Neforfav     string      `snr:"4" json:"neforfav"`
+	Neforfbel    string      `snr:"12,6" json:"neforfbel"`
+	Neforfanta   string      `snr:"18" json:"neforfanta"`
+	Ngenom7      string      `snr:"2" json:"ngenom7"`
+	Ngenom8      string      `snr:"2" json:"ngenom8"`
+	Nlagst       string      `snr:"12,6" json:"nlagst"`
+	Nhogst       string      `snr:"12,6" json:"nhogst"`
+	Beslav       string      `snr:"1" json:"beslav"`
+	_            interface{} `snr:"96"`
 }
 
-// Post886Pre2017...
+// Post886_170213 ...
+type Post886_170213 struct {
+	Nevaluta     string      `snr:"3" json:"nevaluta"`
+	Nebesldat    string      `snr:"8" json:"nebesldat"`
+	Ngenom1      string      `snr:"2" json:"ngenom1"`
+	Ngenom2      string      `snr:"2" json:"ngenom2"`
+	Ngenom3      string      `snr:"2" json:"ngenom3"`
+	Ngenom4      string      `snr:"2" json:"ngenom4"`
+	Ngenom5      string      `snr:"2" json:"ngenom5"`
+	Ngenom6      string      `snr:"2" json:"ngenom6"`
+	Nandamal1    string      `snr:"2" json:"nandamal1"`
+	Nandamal2    string      `snr:"2" json:"nandamal2"`
+	Nandamal3    string      `snr:"2" json:"nandamal3"`
+	Nandamal4    string      `snr:"2" json:"nandamal4"`
+	Nandamal5    string      `snr:"2" json:"nandamal5"`
+	Nandamal6    string      `snr:"2" json:"nandamal6"`
+	Nembel       string      `snr:"12,6" json:"nembel"`
+	Netotbeslbet string      `snr:"12,6" json:"netotbeslbet"`
+	Nenombel     string      `snr:"12,6" json:"nenombel"`
+	Neejvarkst   string      `snr:"1" json:"neejvarkst"`
+	Neantaktier  string      `snr:"18" json:"neantaktier"`
+	Netilstbesl  string      `snr:"8" json:"netilstbesl"`
+	Netilstav    string      `snr:"4" json:"netilstav"`
+	Netilstdat   string      `snr:"8" json:"netilstdat"`
+	Netillsbel   string      `snr:"12,6" json:"netillsbel"`
+	Neforfdat    string      `snr:"8" json:"neforfdat"`
+	Neforfav     string      `snr:"4" json:"neforfav"`
+	Neforfbel    string      `snr:"12,6" json:"neforfbel"`
+	Neforfanta   string      `snr:"18" json:"neforfanta"`
+	Ngenom7      string      `snr:"2" json:"ngenom7"`
+	Ngenom8      string      `snr:"2" json:"ngenom8"`
+	Nlagst       string      `snr:"12,6" json:"nlagst"`
+	Nhogst       string      `snr:"12,6" json:"nhogst"`
+	_            interface{} `snr:"97"`
+}
+
+// Post886_151205...
 // Bolagsverket changed the structure sometime in 2017
 // This is support for the old format
-type Post886Pre2017 struct {
-	Nevaluta              string      `snr:"3" json:"nevaluta"`
-	Nebesldat             string      `snr:"8" json:"nebesldat"`
-	Ngenom1               string      `snr:"2" json:"ngenom1"`
-	Ngenom2               string      `snr:"2" json:"ngenom2"`
-	Ngenom3               string      `snr:"2" json:"ngenom3"`
-	Ngenom4               string      `snr:"2" json:"ngenom4"`
-	Ngenom5               string      `snr:"2" json:"ngenom5"`
-	Ngenom6               string      `snr:"2" json:"ngenom6"`
-	Nandamal1             string      `snr:"2" json:"nandamal1"`
-	Nandamal2             string      `snr:"2" json:"nandamal2"`
-	Nandamal3             string      `snr:"2" json:"nandamal3"`
-	Nandamal4             string      `snr:"2" json:"nandamal4"`
-	Nandamal5             string      `snr:"2" json:"nandamal5"`
-	Nandamal6             string      `snr:"2" json:"nandamal6"`
-	Nembel                string      `snr:"12" json:"nembel"`
-	NembelPrecision       string      `snr:"6" json:"nembel_precision"`
-	Netotbeslbet          string      `snr:"12" json:"netotbeslbet"`
-	NetotbeslbetPrecision string      `snr:"6" json:"netotbeslbet_precision"`
-	Nenombel              string      `snr:"12" json:"nenombel"`
-	NenombelPrecision     string      `snr:"6" json:"nenombel_precision"`
-	Neejvarkst            string      `snr:"1" json:"neejvarkst"`
-	Neantaktier           string      `snr:"18" json:"neantaktier"`
-	Netilstbesl           string      `snr:"8" json:"netilstbesl"`
-	Netilstav             string      `snr:"4" json:"netilstav"`
-	Netilstdat            string      `snr:"8" json:"netilstdat"`
-	Netillsbel            string      `snr:"12" json:"netillsbel"`
-	NetillsbelPrecision   string      `snr:"6" json:"netillsbel_precision"`
-	Neforfdat             string      `snr:"8" json:"neforfdat"`
-	Neforfav              string      `snr:"4" json:"neforfav"`
-	Neforfbel             string      `snr:"12" json:"neforfbel"`
-	NeforfbelPrecision    string      `snr:"6" json:"neforfbel_precision"`
-	Neforfanta            string      `snr:"18" json:"neforfanta"`
-	Ngenom7               string      `snr:"2" json:"ngenom7"`
-	Ngenom8               string      `snr:"2" json:"ngenom8"`
-	Nlagst                string      `snr:"16" json:"nlagst"`
-	Nhogst                string      `snr:"16" json:"nhogst"`
-	_                     interface{} `snr:"101"`
+type Post886_151205 struct {
+	Nevaluta     string      `snr:"3" json:"nevaluta"`
+	Nebesldat    string      `snr:"8" json:"nebesldat"`
+	Ngenom1      string      `snr:"2" json:"ngenom1"`
+	Ngenom2      string      `snr:"2" json:"ngenom2"`
+	Ngenom3      string      `snr:"2" json:"ngenom3"`
+	Ngenom4      string      `snr:"2" json:"ngenom4"`
+	Ngenom5      string      `snr:"2" json:"ngenom5"`
+	Ngenom6      string      `snr:"2" json:"ngenom6"`
+	Nandamal1    string      `snr:"2" json:"nandamal1"`
+	Nandamal2    string      `snr:"2" json:"nandamal2"`
+	Nandamal3    string      `snr:"2" json:"nandamal3"`
+	Nandamal4    string      `snr:"2" json:"nandamal4"`
+	Nandamal5    string      `snr:"2" json:"nandamal5"`
+	Nandamal6    string      `snr:"2" json:"nandamal6"`
+	Nembel       string      `snr:"12,6" json:"nembel"`
+	Netotbeslbet string      `snr:"12,6" json:"netotbeslbet"`
+	Nenombel     string      `snr:"12,6" json:"nenombel"`
+	Neejvarkst   string      `snr:"1" json:"neejvarkst"`
+	Neantaktier  string      `snr:"18" json:"neantaktier"`
+	Netilstbesl  string      `snr:"8" json:"netilstbesl"`
+	Netilstav    string      `snr:"4" json:"netilstav"`
+	Netilstdat   string      `snr:"8" json:"netilstdat"`
+	Netillsbel   string      `snr:"12,6" json:"netillsbel"`
+	Neforfdat    string      `snr:"8" json:"neforfdat"`
+	Neforfav     string      `snr:"4" json:"neforfav"`
+	Neforfbel    string      `snr:"12,6" json:"neforfbel"`
+	Neforfanta   string      `snr:"18" json:"neforfanta"`
+	Ngenom7      string      `snr:"2" json:"ngenom7"`
+	Ngenom8      string      `snr:"2" json:"ngenom8"`
+	Nlagst       string      `snr:"16" json:"nlagst"`
+	Nhogst       string      `snr:"16" json:"nhogst"`
+	_            interface{} `snr:"101"`
 }
 
 // Post887 ...

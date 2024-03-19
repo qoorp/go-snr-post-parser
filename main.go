@@ -83,7 +83,7 @@ func structSize(refType reflect.Type) (int, error) {
 		field := refType.Field(i)
 		switch field.Type.Kind() {
 		case reflect.String, reflect.Interface:
-			length, err := getLen(field)
+			length, _, err := getLen(field)
 			if err != nil {
 				return result, err
 			}
@@ -106,20 +106,26 @@ func doUnmarshal(data []byte, ref reflect.Value) (int, error) {
 	readPos := 0
 	for i := 0; i < refType.NumField(); i++ {
 		field := refType.Field(i)
-		length, err := getLen(field)
+		length, splitAt, err := getLen(field)
 		if err != nil && field.Type.Kind() != reflect.Array {
 			return readPos, err
 		}
 		switch field.Type.Kind() {
 		case reflect.String:
 			d := data[readPos : readPos+length]
-
 			b, err := decoder.Bytes(bytes.Trim(d, "\x00"))
 			if err != nil {
 				return readPos, err
 			}
 			fn := ref.FieldByName(field.Name)
-			fn.SetString(strings.TrimSpace(string(b)))
+			var value string
+			if splitAt < length {
+				v := string(b)
+				value = v[:splitAt] + "." + v[splitAt:]
+			} else {
+				value = string(b)
+			}
+			fn.SetString(strings.TrimSpace(value))
 			readPos += length
 		case reflect.Array:
 			fn := ref.FieldByName(field.Name)
@@ -138,11 +144,24 @@ func doUnmarshal(data []byte, ref reflect.Value) (int, error) {
 	return readPos, nil
 }
 
-func getLen(field reflect.StructField) (int, error) {
-	key := field.Tag.Get("snr")
-	i, err := strconv.Atoi(key)
+func getLen(field reflect.StructField) (int, int, error) {
+	v := field.Tag.Get("snr")
+	vs := strings.Split(v, ",")
+	var number int
+	var decimal int
+	var err error
+	number, err = strconv.Atoi(vs[0])
 	if err != nil {
-		return 0, ErrTagUnsupportedType
+		return 0, 0, ErrTagUnsupportedType
 	}
-	return i, nil
+	if len(vs) > 1 {
+		var err error
+		decimal, err = strconv.Atoi(vs[1])
+		if err != nil {
+			return 0, 0, ErrTagUnsupportedType
+		}
+	}
+	length := number + decimal
+	splitAt := length - decimal
+	return length, splitAt, nil
 }
