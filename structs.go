@@ -124,7 +124,7 @@ type Post811_170211 struct {
 	Valuta2   string      `snr:"3" json:"valuta2"`
 	Akaph     string      `snr:"12,6" json:"akaph"`
 	Valuta3   string      `snr:"3" json:"valuta3"`
-	Nombel    string      `snr:"12,6" json:"nombel"`
+	_Nombel   string      `snr:"18"`
 	Totantakt string      `snr:"18" json:"totantakt"`
 	Antaktl   string      `snr:"18" json:"antaktl"`
 	Antakth   string      `snr:"18" json:"antakth"`
@@ -139,7 +139,7 @@ type Post811_161008 struct {
 	Valuta2   string      `snr:"3" json:"valuta2"`
 	Akaph     string      `snr:"12,6" json:"akaph"`
 	Valuta3   string      `snr:"3" json:"valuta3"`
-	Nombel    string      `snr:"12,6" json:"nombel"`
+	_Nombel   string      `snr:"18"`
 	Totantakt string      `snr:"18" json:"totantakt"`
 	Antaktl   string      `snr:"18" json:"antaktl"`
 	Antakth   string      `snr:"18" json:"antakth"`
@@ -155,7 +155,7 @@ type Post811_151205 struct {
 	Valuta2   string      `snr:"3" json:"valuta2"`
 	Akaph     string      `snr:"16" json:"akaph"`
 	Valuta3   string      `snr:"3" json:"valuta3"`
-	Nombel    string      `snr:"12,6" json:"nombel"`
+	_Nombel   string      `snr:"18"`
 	Totantakt string      `snr:"18" json:"totantakt"`
 	Antaktl   string      `snr:"18" json:"antaktl"`
 	Antakth   string      `snr:"18" json:"antakth"`
