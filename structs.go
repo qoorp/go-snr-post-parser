@@ -467,7 +467,7 @@ type Post886_230204 struct {
 	Nandamal6    string      `snr:"2" json:"nandamal6"`
 	Nembel       string      `snr:"12,6" json:"nembel"`
 	Netotbeslbet string      `snr:"12,6" json:"netotbeslbet"`
-	Nenombel     string      `snr:"12,6" json:"nenombel"`
+	_            interface{} `snr:"18" `
 	Neejvarkst   string      `snr:"1" json:"neejvarkst"`
 	Neantaktier  string      `snr:"18" json:"neantaktier"`
 	Netilstbesl  string      `snr:"8" json:"netilstbesl"`
@@ -504,7 +504,7 @@ type Post886_170213 struct {
 	Nandamal6    string      `snr:"2" json:"nandamal6"`
 	Nembel       string      `snr:"12,6" json:"nembel"`
 	Netotbeslbet string      `snr:"12,6" json:"netotbeslbet"`
-	Nenombel     string      `snr:"12,6" json:"nenombel"`
+	_            interface{} `snr:"18" `
 	Neejvarkst   string      `snr:"1" json:"neejvarkst"`
 	Neantaktier  string      `snr:"18" json:"neantaktier"`
 	Netilstbesl  string      `snr:"8" json:"netilstbesl"`
