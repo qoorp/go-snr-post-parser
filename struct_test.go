@@ -599,7 +599,7 @@ func postData811(result []byte) {
 	copy(result[postIDLength+39:], p.Valuta2)
 	copy(result[postIDLength+42:], p.Akaph)
 	copy(result[postIDLength+60:], p.Valuta3)
-	copy(result[postIDLength+63:], p.Nombel)
+	// copy(result[postIDLength+63:], p.Nombel)
 	copy(result[postIDLength+81:], p.Totantakt)
 	copy(result[postIDLength+99:], p.Antaktl)
 	copy(result[postIDLength+117:], p.Antakth)
@@ -1035,7 +1035,6 @@ func postPointer811() *Post811_170211 {
 		Valuta2:   "3",
 		Akaph:     "400000000000100000",
 		Valuta3:   "5",
-		Nombel:    "600000000000100000",
 		Totantakt: "7",
 		Antaktl:   "8",
 		Antakth:   "9",

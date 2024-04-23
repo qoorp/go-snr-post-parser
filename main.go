@@ -121,7 +121,7 @@ func doUnmarshal(data []byte, ref reflect.Value) (int, error) {
 			var value string
 			if splitAt < length {
 				// Ignore values where the length doesn't match, probably NULL
-				if splitAt > len(b) {
+				if splitAt < len(b) {
 					v := string(b)
 					value = v[:splitAt] + "." + v[splitAt:]
 				}

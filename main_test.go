@@ -1,6 +1,8 @@
 package snrpost
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestUnmarshalWholeNumber(t *testing.T) {
 	s := []byte("000000000000001000")
@@ -26,6 +28,6 @@ func TestUnmarshalDecimalNumber(t *testing.T) {
 		t.Fatalf("Unmarshal failed %v", err)
 	}
 	if p.DecimalNumber != "000000000000.001000" {
-		t.Fatalf("DecimalNumber doesn't match expected value")
+		t.Fatalf("DecimalNumber doesn't match expected value %v", p.DecimalNumber)
 	}
 }
